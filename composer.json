@@ -1,0 +1,14 @@
+{
+    "name": "rock/tftroll",
+    "type": "project",
+    "require": {
+        "vlucas/phpdotenv": "^3.4"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Matheus",
+            "email": "matheusgt4@hotmail.com"
+        }
+    ]
+}
