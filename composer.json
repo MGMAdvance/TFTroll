@@ -2,12 +2,13 @@
     "name": "rock/tftroll",
     "type": "project",
     "require": {
-        "vlucas/phpdotenv": "^3.4"
+        "vlucas/phpdotenv": "^3.4",
+        "twig/twig": "^2.0"
     },
     "license": "MIT",
     "authors": [
         {
-            "name": "Matheus",
+            "name": "Matheus Gonçalves",
             "email": "matheusgt4@hotmail.com"
         }
     ]

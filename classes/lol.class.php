@@ -13,13 +13,23 @@ class ranked {
         "GetSummonerIdByName" => "/lol/summoner/v4/summoners/by-name/"
     ];
 
-    public function _construct($KEY){
+    public function _construct(){}
+
+    public function setApiKey($KEY){
         $this->API_KEY = $KEY;
     }
 
     public function getSummonerIdByName($name){
         echo $name;
         echo $this->API_KEY;
+    }
+
+    public function getSummonerIcon($icon){
+
+    }
+
+    public function getSummonerEloTFT($summonerID){
+
     }
 
     public function teste(){
