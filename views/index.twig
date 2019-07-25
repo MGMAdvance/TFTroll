@@ -20,10 +20,13 @@
 </head>
 <body>
     <div class="content">
-        <img width="128" height="128" src="http://ddragon.leagueoflegends.com/cdn/9.14.1/img/profileicon/{{icon}}.png">
-        <p><b>Nome de invocador:</b> {{ name }} </p>
-        <p><b>Liga:</b> {{ league }} </p>
-        <p><b>Pontos de liga:</b> {{ points }} </p>
+        <form action="profile.php" method="GET">
+            <select name="region">
+                <option value="0">BR</option>
+            </select>
+            <input name="q" type="text">
+
+        </form>
     </div>
 </body>
 </html>

@@ -20,10 +20,18 @@
 </head>
 <body>
     <div class="content">
+        <form action="index.php" method="GET">
+            <input type="text" name="q">
+        </form>
+    </div>
+    <br>
+    <div class="content">
         <img width="128" height="128" src="http://ddragon.leagueoflegends.com/cdn/9.14.1/img/profileicon/{{icon}}.png">
         <p><b>Nome de invocador:</b> {{ name }} </p>
-        <p><b>Liga:</b> {{ league }} </p>
-        <p><b>Pontos de liga:</b> {{ points }} </p>
+        <p><b>Liga:</b> {{ tier }} </p>
+        <p><b>Pontos de liga:</b> {{ leaguePoints }} </p>
+        <p><b>Vitorias:</b> {{ wins }} </p>
+        <p><b>Derrotas:</b> {{ losses }} </p>
     </div>
 </body>
 </html>
