@@ -10,12 +10,12 @@ $region = isset($_GET['region']) ? $_GET['region'] : '';
 $user = isset($_GET['q']) ? $_GET['q'] : '';
 
 // Get a API KEY fron .env
-try{
-    $dotenv = Dotenv\Dotenv::create(__DIR__);
-    $dotenv->load();
-}catch(Exception $e){
+// try{
+//     $dotenv = Dotenv\Dotenv::create(__DIR__);
+//    $dotenv->load();
+// }catch(Exception $e){
     
-}
+// }
 
 $API_KEY = getenv('API_KEY');
 
