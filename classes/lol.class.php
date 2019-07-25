@@ -65,8 +65,8 @@ class ranked {
         }
     }
 
-    public function getSummonerIcon($icon){
-        return $this->summonerDTO['profileIcon'];
+    public function getSummonerIcon(){
+        return $this->summonerDTO['profileIconId'];
     }
 
     public function getSummonerLeagues(){
@@ -97,14 +97,15 @@ class ranked {
     }
 
     public function getSummonerTftData(){
-        for ($i=0; $i <= count($this->leagues); $i++) { 
-            if($key = array_search('RANKED_TFT', $this->leagues[$i])){
-                $tft = $i;
-                break;
+        for ($i=0; $i < count($this->leagues); $i++) { 
+            for ($t=0; $t < 4; $t++) {
+                if($this->leagues[$i]['queueType'] == "RANKED_TFT"){
+                    $index = $i;
+                }
             }
         }
         
-        return $this->leagues[$tft];
+        return $this->leagues[$index];
     }
 
     public function getSummonerName(){
@@ -123,11 +124,6 @@ class ranked {
      */
     public static function FilterName(string $name){
         return rawurlencode(htmlentities($name));
-    }
-
-    public function teste(){
-        echo self::REGIONS[0];
-        echo $this->API_KEY;
     }
 
 }
