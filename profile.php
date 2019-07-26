@@ -24,7 +24,7 @@ $lol = new ranked($API_KEY);
 $lol->getSummonerDTO($region, $user);
 $lol->getSummonerLeagues();
 $data = $lol->getSummonerTftData();
-$data['icon'] = $lol->getSummonerIcon();
+//$data['icon'] = $lol->getSummonerIcon();
 
 var_dump($data);
 
