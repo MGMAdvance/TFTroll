@@ -24,8 +24,8 @@ $lol = new ranked($API_KEY);
 $lol->getSummonerDTO($region, $user);
 $lol->getSummonerLeagues();
 $data = $lol->getSummonerTftData();
-//$data['icon'] = $lol->getSummonerIcon();
+$data['icon'] = $lol->getSummonerIcon();
 
-var_dump($lol->getAllData());
+//var_dump($lol->getAllData());
 
 echo $twig->render('search.twig', $data);
