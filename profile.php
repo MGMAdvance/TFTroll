@@ -26,4 +26,6 @@ $lol->getSummonerLeagues();
 $data = $lol->getSummonerTftData();
 $data['icon'] = $lol->getSummonerIcon();
 
+var_dump($data);
+
 echo $twig->render('search.twig', $data);
