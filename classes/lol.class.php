@@ -52,7 +52,7 @@ class ranked {
 
             $result = curl_exec($curl);
 
-            if(!$result){ die("Vish!!!"); }
+            if(!$result){ die("Prbblema para capturar o summonerDTO!!!"); }
             
             curl_close($curl);
 
@@ -65,37 +65,34 @@ class ranked {
         }
     }
 
-    public function getSummonerIcon(){
-        return $this->summonerDTO['profileIconId'];
-    }
-
+    
     public function getSummonerLeagues(){
         $id = $this->getSummonerId();
         $region = $this->summonerRegion;
         try{
             $url = 'https://'.self::REGIONS[$region].self::ENDPOINTS['GetLeaguesSummoner'].$id;
             $curl = curl_init();
-
+            
             curl_setopt($curl, CURLOPT_URL, $url);
             curl_setopt($curl, CURLOPT_HTTPHEADER, array(
                 'X-Riot-Token: '.$this->API_KEY,
                 'Content-Type: application/x-www-form-urlencoded; charset=UTF-8',
             ));
             curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-
+            
             $result = curl_exec($curl);
-
+            
             if(!$result){ die("Problema para capturar as ligas! :/"); }
             
             curl_close($curl);
-
+            
             $this->leagues = json_decode($result, true); 
-
+            
         }catch(Exception $e){
             echo 'Exceção capturada: ',  $e->getMessage(), "\n";
         }
     }
-
+    
     public function getSummonerTftData(){
         for ($i=0; $i < count($this->leagues); $i++) { 
             for ($t=0; $t < 4; $t++) {
@@ -107,6 +104,10 @@ class ranked {
         
         return $this->leagues[$index];
     }
+    
+    public function getSummonerIcon(){
+        return $this->summonerDTO['profileIconId'];
+    }
 
     public function getSummonerName(){
         return $this->summonerDTO['name'];
@@ -114,6 +115,10 @@ class ranked {
 
     public function getSummonerId(){
         return $this->summonerDTO['id'];
+    }
+
+    public function getAllData(){
+        return $this->summonerDTO;
     }
 
     /**
