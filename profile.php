@@ -22,10 +22,10 @@ $API_KEY = getenv('API_KEY');
 // Prepare data
 $lol = new ranked($API_KEY);
 $lol->getSummonerDTO($region, $user);
+var_dump($lol->getAllData());
+exit;
 $lol->getSummonerLeagues();
 $data = $lol->getSummonerTftData();
 $data['icon'] = $lol->getSummonerIcon();
-
-//var_dump($lol->getAllData());
 
 echo $twig->render('search.twig', $data);
