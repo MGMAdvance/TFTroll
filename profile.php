@@ -22,6 +22,7 @@ $API_KEY = getenv('API_KEY');
 // Prepare data
 $lol = new ranked($API_KEY);
 $lol->getSummonerDTO($region, $user);
+echo $API_KEY;
 var_dump($lol->getAllData());
 exit;
 $lol->getSummonerLeagues();
