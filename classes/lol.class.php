@@ -40,9 +40,7 @@ class ranked {
         try{
             $this->summonerRegion = $region;
             $name = self::FilterName($name);
-            $api = $this->API_KEY;
-            $url = 'https://'.self::REGIONS[$region].self::ENDPOINTS['GetSummonerIdByName'].$name.'?api_key='.$api;
-            //$url = 'https://'.self::REGIONS[$region].self::ENDPOINTS['GetSummonerIdByName'].$name;
+            $url = 'https://'.self::REGIONS[$region].self::ENDPOINTS['GetSummonerIdByName'].$name;
             $curl = curl_init();
 
             curl_setopt($curl, CURLOPT_URL, $url);
@@ -71,10 +69,8 @@ class ranked {
     public function getSummonerLeagues(){
         $id = $this->getSummonerId();
         $region = $this->summonerRegion;
-        $api = $this->API_KEY;
         try{
-            $url = 'https://'.self::REGIONS[$region].self::ENDPOINTS['GetLeaguesSummoner'].$id.'?api_key='.$api;
-            //$url = 'https://'.self::REGIONS[$region].self::ENDPOINTS['GetLeaguesSummoner'].$id;
+            $url = 'https://'.self::REGIONS[$region].self::ENDPOINTS['GetLeaguesSummoner'].$id;
             $curl = curl_init();
             
             curl_setopt($curl, CURLOPT_URL, $url);
