@@ -10,19 +10,61 @@
             font-family: Arial;
         }
         body {
-            background: #555;
+            margin: 0;
+            padding: 0;
+            font-family: "Segoe UI",Arial,sans-serif;
+            background: #0d202b;
+            background: linear-gradient(to right, #0D202A, #0d202b);
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            min-height: 40vh;
+            overflow: hidden;
         }
 
+        .center {
+            position:fixed;
+            top: 50%;
+            left: 50%;
+            width:30em;
+            height:18em;
+            margin-top: -9em; /*set to a negative number 1/2 of your height*/
+            margin-left: -15em; /*set to a negative number 1/2 of your width*/
+            border: 1px solid #ccc;
+            background-color: #f3f3f3;
+        }
         .content {
             max-width: 500px;
             margin: auto;
             background: white;
             padding: 10px;
         }
+
+        .search{
+            width: 600px;
+            border-radius: 8px;
+            padding: 15px;
+            background: #fff;
+            filter: drop-shadow(1px 4px 10px rgba(0, 0, 0, 0.3));
+        }
+
+        .box{
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 600px;
+            min-height: 200px;
+            height: auto;
+            border-radius: 8px;
+            padding: 35px;
+            background: #fff;
+            filter: drop-shadow(1px 4px 10px rgba(0, 0, 0, 0.3));
+        }
     </style>
 </head>
 <body>
-    <div class="content">
+    <div class="search">
         <form action="profile.php" method="GET">
             <select name="region">
                 <option value="0">BR</option>
@@ -43,14 +85,18 @@
         </form>
     </div>
     <br>
-    <div class="content">
-        <img width="128" height="128" src="https://ddragon.leagueoflegends.com/cdn/9.14.1/img/profileicon/{{ icon }}.png" alt="Icon">
-        <p><b>Nome de invocador:</b> {{ summonerName }} </p>
-        <p><b>Liga:</b> {{ tier }} </p>
-        <p><b>Divisão:</b> {{ rank }}</p>
-        <p><b>Pontos de liga:</b> {{ leaguePoints }} </p>
-        <p><b>Vitorias:</b> {{ wins }} </p>
-        <p><b>Derrotas:</b> {{ losses }} </p>
+    <div class="box">
+        <div>
+            <img width="128" height="128" src="https://ddragon.leagueoflegends.com/cdn/9.14.1/img/profileicon/{{ icon }}.png" alt="Icon">
+        </div>
+        <div>
+            <p><b>Nome de invocador:</b> {{ summonerName }} </p>
+            <p><b>Liga:</b> {{ tier }} </p>
+            <p><b>Divisão:</b> {{ rank }}</p>
+            <p><b>Pontos de liga:</b> {{ leaguePoints }} </p>
+            <p><b>Vitorias:</b> {{ wins }} </p>
+            <p><b>Derrotas:</b> {{ losses }} </p>
+        </div>
     </div>
 </body>
 </html>
