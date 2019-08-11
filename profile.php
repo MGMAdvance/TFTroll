@@ -7,7 +7,7 @@ $loader = new \Twig\Loader\FilesystemLoader('views');
 $twig = new \Twig\Environment($loader);
 
 $region = isset($_GET['region']) ? $_GET['region'] : '0';
-$user = isset($_GET['user']) ? $_GET['user'] : 'Rock come ku';
+$user = isset($_GET['user']) ? $_GET['user'] : 'relyt OFWGKTA';
 
 // Get a API KEY fron .env
 try{
